@@ -44,33 +44,16 @@ mode        : selfcontained # {standalone, draft}
 
 ## Laboratory Test Quantiles for Glucose
 
-```{r, echo=F}
-NHANES_data_file <- "C:/Users/rseiter/Documents/Education/Coursera - Developing Data Products/Course Project/DevDataProdProject/NHANESApp/NHANES_1999.RData"
-load(file = NHANES_data_file)
+![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1.png) 
 
-selectVar <- "Glucose (mg/dL) - LBXSGL"
-NHANESVar <- which(NHANES_pulldown_choices == selectVar)
-hist(NHANES_data[,NHANESVar], xlab=selectVar, col='lightblue',
-     main='Histogram with 5%, 25%, 50%, 75%, and 95% quantiles')
-quant <- quantile(NHANES_data[,NHANESVar], probs = c(0.05, 0.25, 0.5, 0.75, 0.95),
-                  na.rm=TRUE)
-for (i in 1:length(quant)) abline(v=quant[i],col="red")
-```
 
 
 ---
 
 ## Scatterplot of Serum Calcium and Phosphorus
 
-```{r, echo=F, warning=F}
-library(car)
-selectVar <- "Calcium, total (mg/dL) - LBXSCA"
-NHANESVar <- which(NHANES_pulldown_choices == selectVar)
-selectYVar <- "Phosphorus (mg/dL) - LBXSPH"
-NHANESYVar <- which(NHANES_pulldown_choices == selectYVar)
-scatterplot(NHANES_data[,NHANESVar], NHANES_data[,NHANESYVar], xlab=selectVar,
-            ylab=selectYVar)
-```
+![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2.png) 
+
 
 <!--
 ---
